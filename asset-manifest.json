@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/TD-React-Challenge-Test-1/static/css/main.2cce8147.chunk.css",
-    "main.js": "/TD-React-Challenge-Test-1/static/js/main.dac88f53.chunk.js",
-    "main.js.map": "/TD-React-Challenge-Test-1/static/js/main.dac88f53.chunk.js.map",
-    "runtime~main.js": "/TD-React-Challenge-Test-1/static/js/runtime~main.52067aab.js",
-    "runtime~main.js.map": "/TD-React-Challenge-Test-1/static/js/runtime~main.52067aab.js.map",
-    "static/js/2.08ff1b70.chunk.js": "/TD-React-Challenge-Test-1/static/js/2.08ff1b70.chunk.js",
-    "static/js/2.08ff1b70.chunk.js.map": "/TD-React-Challenge-Test-1/static/js/2.08ff1b70.chunk.js.map",
-    "index.html": "/TD-React-Challenge-Test-1/index.html",
-    "precache-manifest.ba0731b0ff13d43c52edf9dabbb11fc2.js": "/TD-React-Challenge-Test-1/precache-manifest.ba0731b0ff13d43c52edf9dabbb11fc2.js",
-    "service-worker.js": "/TD-React-Challenge-Test-1/service-worker.js",
-    "static/css/main.2cce8147.chunk.css.map": "/TD-React-Challenge-Test-1/static/css/main.2cce8147.chunk.css.map"
+    "main.css": "/AQr/static/css/main.2cce8147.chunk.css",
+    "main.js": "/AQr/static/js/main.b4cbd622.chunk.js",
+    "main.js.map": "/AQr/static/js/main.b4cbd622.chunk.js.map",
+    "runtime~main.js": "/AQr/static/js/runtime~main.635495cf.js",
+    "runtime~main.js.map": "/AQr/static/js/runtime~main.635495cf.js.map",
+    "static/js/2.08ff1b70.chunk.js": "/AQr/static/js/2.08ff1b70.chunk.js",
+    "static/js/2.08ff1b70.chunk.js.map": "/AQr/static/js/2.08ff1b70.chunk.js.map",
+    "index.html": "/AQr/index.html",
+    "precache-manifest.e3b8bc841ae0c34a1ae06c367a151fcb.js": "/AQr/precache-manifest.e3b8bc841ae0c34a1ae06c367a151fcb.js",
+    "service-worker.js": "/AQr/service-worker.js",
+    "static/css/main.2cce8147.chunk.css.map": "/AQr/static/css/main.2cce8147.chunk.css.map"
   }
 }
