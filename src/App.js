@@ -1,12 +1,16 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import './App.css';
 import Camera from './fragments/Camera';
+import Display from './fragments/Display';
+
 function App() {
 
   return (
 		<>
 			<Camera>
-				{(stream) => (<></>)}
+				{({stream}) => (
+					<Display stream={stream} />
+				)}
 			</Camera>
 		</>
   );
