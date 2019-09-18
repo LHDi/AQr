@@ -9,7 +9,7 @@ function App() {
 		<>
 			<Camera>
 				{({stream}) => (
-					<Display stream={stream} />
+					<Display stream={stream} crop/>
 				)}
 			</Camera>
 		</>

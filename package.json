@@ -8,10 +8,12 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.1",
-    "react-three-fiber": "^2.4.3"
+    "react-three-fiber": "^2.4.3",
+    "webrtc-adapter": "^7.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+		"start": "react-scripts start",
+		"starthttps": "HTTPS=true npm start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
