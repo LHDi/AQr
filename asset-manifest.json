@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/AQr/static/css/main.df579641.chunk.css",
-    "main.js": "/AQr/static/js/main.468801a4.chunk.js",
-    "main.js.map": "/AQr/static/js/main.468801a4.chunk.js.map",
+    "main.js": "/AQr/static/js/main.3bf066d4.chunk.js",
+    "main.js.map": "/AQr/static/js/main.3bf066d4.chunk.js.map",
     "runtime~main.js": "/AQr/static/js/runtime~main.a58e02de.js",
     "runtime~main.js.map": "/AQr/static/js/runtime~main.a58e02de.js.map",
     "static/js/2.962d271a.chunk.js": "/AQr/static/js/2.962d271a.chunk.js",
@@ -10,7 +10,7 @@
     "eb244ba2c7c36bc4db0e.worker.js": "/AQr/eb244ba2c7c36bc4db0e.worker.js",
     "eb244ba2c7c36bc4db0e.worker.js.map": "/AQr/eb244ba2c7c36bc4db0e.worker.js.map",
     "index.html": "/AQr/index.html",
-    "precache-manifest.f14c2e9fc695ad0b50e7302a994cc541.js": "/AQr/precache-manifest.f14c2e9fc695ad0b50e7302a994cc541.js",
+    "precache-manifest.38d94edc37f89b8af271369fbc3fac25.js": "/AQr/precache-manifest.38d94edc37f89b8af271369fbc3fac25.js",
     "service-worker.js": "/AQr/service-worker.js",
     "static/css/main.df579641.chunk.css.map": "/AQr/static/css/main.df579641.chunk.css.map"
   }
