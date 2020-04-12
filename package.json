@@ -4,18 +4,19 @@
   "private": true,
   "homepage": "https://elhadi98.github.io/AQr",
   "dependencies": {
-    "jsqr": "^1.2.0",
+    "jsqr": "github:elhadi98/jsqr#master",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.1",
     "react-three-fiber": "^2.4.3",
+    "three": "^0.108.0",
     "webrtc-adapter": "^7.3.0"
   },
   "scripts": {
-		"start": "react-scripts start",
-		"starthttps": "HTTPS=true npm start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "starthttps": "HTTPS=true npm start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -36,6 +37,8 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.1.1"
+    "gh-pages": "^2.1.1",
+    "react-app-rewired": "^2.1.3",
+    "worker-loader": "^2.0.0"
   }
 }

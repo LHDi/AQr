@@ -2,14 +2,17 @@ import React from 'react';
 import './App.css';
 import Camera from './fragments/Camera';
 import Display from './fragments/Display';
+import Combiner from './fragments/Combiner';
 
 function App() {
-
   return (
 		<>
-			<Camera>
+			<Camera controle>
 				{({stream}) => (
-					<Display stream={stream} crop/>
+					<>
+						<Display stream={stream} crop/>
+						<Combiner />
+					</>
 				)}
 			</Camera>
 		</>

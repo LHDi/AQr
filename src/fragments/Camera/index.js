@@ -4,6 +4,7 @@ import CameraControle from './CameraControle';
 window.adapter = require('webrtc-adapter');
 
 const resList = [
+	[480, 360, '360p - 4:3'],
 	[640, 480, '480p - 4:3'],
 	[1280, 720, '720p - 16:9'],
 	[1920, 1080, '1080p - 16:9']
@@ -33,7 +34,7 @@ function hasGetUserMedia() {
 const cameraReducer = ({cameraList, selectedCameraId}, {type, id, list}) => {
 	switch (type) {
 		case 'SET_LIST':
-			return {cameraList: list, selectedCameraId: list[0].deviceId};
+			return {cameraList: list, selectedCameraId: list[list.length-1].deviceId};
 		case 'SELECT':
 			return {cameraList: [...cameraList], selectedCameraId: id};
 		default:
@@ -46,7 +47,6 @@ const streamReducer = ({stream, constraints, permitted, selectedConstraint}, {ty
 		case 'SET_STREAM':
 			return {stream: newstream, permitted: true, constraints: newConstraints, selectedConstraint: newSelectedConstraint};
 		case 'SET_STREAM_CONS':
-			stream.getVideoTracks()[0].applyConstraints({...newSelectedConstraint})
 			return {stream, permitted, constraints, selectedConstraint: newSelectedConstraint};
 		case 'RESET_STREAM':
 			return {stream: null, permitted: false, constraints: [], selectedConstraint: null};
@@ -55,7 +55,8 @@ const streamReducer = ({stream, constraints, permitted, selectedConstraint}, {ty
 	}
 }
 
-const Camera = ({children}) => {
+const Camera = ({children, controle}) => {
+	
 	const [{selectedCameraId, cameraList}, dispatchCamera] = useReducer(cameraReducer, {cameraList: [], selectedCameraId: null});
 	const [{stream, permitted, constraints, selectedConstraint}, dispatchStream] = useReducer(streamReducer, {stream: null, permitted: false, constraints: [], selectedConstraint: null});
 	const [error, setError] = useState(null);
@@ -63,9 +64,9 @@ const Camera = ({children}) => {
 	const reset = useCallback(() => {
 		setError(null);
 		if(stream)
-			stream.getTracks().forEach(t => t.stop());
+		stream.getTracks().forEach(t => t.stop());
 	}, [stream]);
-
+	
 	useEffect(() => {
 		const getCameraList = async () => {
 			if('mediaDevices' in navigator && 'enumerateDevices' in navigator.mediaDevices) {
@@ -87,7 +88,7 @@ const Camera = ({children}) => {
 		};
 		getCameraList();
 	}, [permitted]);
-
+	
 	useEffect(() => {
 		reset()
 		const SelectedCamera = (!!cameraList.length && selectedCameraId) ? selectedCameraId:undefined;
@@ -100,7 +101,8 @@ const Camera = ({children}) => {
 						video: {
 							deviceId: {
 								exact: SelectedCamera
-							}
+							},
+							width: 480, height: 360 
 						}
 					});
 					const constraints = !!stream.getTracks()[0].getCapabilities ? getConstraints(stream.getTracks()[0].getCapabilities()) : [];
@@ -117,14 +119,21 @@ const Camera = ({children}) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [selectedCameraId, cameraList.length]);
 
+	useEffect(() => {
+		if(stream && selectedConstraint)
+			stream.getVideoTracks()[0].applyConstraints({...selectedConstraint})
+	}, [selectedConstraint, stream])
 	if(!!error) 
 		return (<span>{error.message}</span>)
 	return (
 		<>
-			<CameraControle
-				cameraProps={{cameraList, selectedCameraId, selectCamera: (id) => dispatchCamera({type: 'SELECT', id})}}
-				streamProps={{constraints, selectedConstraint, selectConstraint: (newSelectedConstraint) => dispatchStream({type: 'SET_STREAM_CONS', newSelectedConstraint})}}
-			/>
+			{
+				controle &&
+				<CameraControle
+					cameraProps={{cameraList, selectedCameraId, selectCamera: (id) => dispatchCamera({type: 'SELECT', id})}}
+					streamProps={{constraints, selectedConstraint, selectConstraint: (newSelectedConstraint) => dispatchStream({type: 'SET_STREAM_CONS', newSelectedConstraint})}}
+				/>
+			}
 			{children({stream})}
 		</>
 	);
